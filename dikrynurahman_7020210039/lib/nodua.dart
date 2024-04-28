@@ -7,28 +7,77 @@ class Nodua extends StatelessWidget {
       appBar: AppBar(
         title: Text('Biodata'),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              radius: 60,
-              backgroundImage: AssetImage('assets/images/potosaya.jpg'),
+            Center(
+              child: CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage('assets/images/potosaya.jpg'),
+              ),
             ),
             SizedBox(height: 20),
-            Text(
-              'Nama: Dikry Nurahman',
-              style: TextStyle(fontSize: 24),
+            ListTile(
+              title: Text(
+                'Nama',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                'Dikry Nurahman',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
-            SizedBox(height: 10),
-            Text(
-              'NIM: 7020210039',
-              style: TextStyle(fontSize: 18),
+            ListTile(
+              title: Text(
+                'Tempat, Tanggal Lahir',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                'Ciamis, 21 Juli 2004',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
-            SizedBox(height: 10),
-            Text(
-              'Alamat: Jl. Contoh No. 123',
-              style: TextStyle(fontSize: 18),
+            ListTile(
+              title: Text(
+                'Alamat',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                'Jl. Bojong RT 06/RW 06, Desa Sukajaya, Kec. Rajadesa, Kab. Ciamis',
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'No. Telepon',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                '0822300270201',
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'Email',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                'dikrynurahman@gmail.com',
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'Pendidikan Terakhir',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                'S1 Sistem Informasi',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
             SizedBox(height: 20),
             ElevatedButton(

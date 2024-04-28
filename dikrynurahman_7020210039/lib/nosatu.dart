@@ -22,17 +22,6 @@ class _NosatuState extends State<Nosatu> {
         DataCell(Text(kode)),
         DataCell(Text(nama)),
         DataCell(Text('Rp.$harga')),
-        DataCell(
-          IconButton(
-            icon: Icon(Icons.delete),
-            onPressed: () {
-              setState(() {
-                _rows.removeWhere(
-                    (row) => row.cells[0].child.toString() == kode);
-              });
-            },
-          ),
-        ),
       ]));
     });
 
@@ -101,7 +90,6 @@ class _NosatuState extends State<Nosatu> {
                   DataColumn(label: Text('Kode')),
                   DataColumn(label: Text('Nama')),
                   DataColumn(label: Text('Harga')),
-                  DataColumn(label: Text('Aksi')),
                 ],
                 rows: _rows,
               ),
@@ -110,7 +98,7 @@ class _NosatuState extends State<Nosatu> {
                 onPressed: () {
                   Navigator.pushNamed(context, '/nodua');
                 },
-                child: Text('Tampilkan Nodua'),
+                child: Text('2'),
               ),
             ],
           ),
