@@ -12,14 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Ujian Tengah Semester',
+      title: 'Mobile Technology',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/', // Set halaman awal aplikasi
+      initialRoute: '/',
       routes: {
-        '/': (context) => Nosatu(), // Halaman utama aplikasi
-        '/nodua': (context) => Nodua(), // Halaman Nodua
+        '/': (context) => Nosatu(),
+        '/nodua': (context) => Nodua(),
       },
     );
   }

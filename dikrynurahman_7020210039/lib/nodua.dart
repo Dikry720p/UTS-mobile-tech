@@ -5,88 +5,95 @@ class Nodua extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 91, 187, 255),
         title: Text('Biodata'),
       ),
+      backgroundColor: Color.fromARGB(255, 91, 187, 255),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: CircleAvatar(
-                radius: 60,
-                backgroundImage: AssetImage('assets/images/potosaya.jpg'),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        radius: 60,
+                        backgroundImage:
+                            AssetImage('assets/images/potosaya.jpg'),
+                      ),
+                      SizedBox(height: 12),
+                      Text(
+                        'DIKRY NURAHMAN',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        '7020210039',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            ListTile(
-              title: Text(
-                'Nama',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              SizedBox(height: 20),
+              buildListTile(
+                  Icons.cake, 'Tempat, Tanggal Lahir', 'Ciamis, 11 Mei 2002'),
+              buildListTile(Icons.location_on, 'Alamat',
+                  'dsn.bentuksari, des. sukajaya, kec. Rajadesa, kab. Ciamis'),
+              buildListTile(Icons.phone, 'No. Telepon', '081234567820'),
+              buildListTile(Icons.email, 'Email', 'dikrynurahman49@gmail.com'),
+              buildListTile(Icons.sports_soccer, 'Hobi', 'Merenung'),
+              buildListTile(Icons.school, 'Pendidikan Terakhir',
+                  'S1 SISTEM INFORMASI UNIVERSITAS GALUH'),
+              SizedBox(height: 20),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.red),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  'kembali',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-              subtitle: Text(
-                'Dikry Nurahman',
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            ListTile(
-              title: Text(
-                'Tempat, Tanggal Lahir',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(
-                'Ciamis, 21 Juli 2004',
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            ListTile(
-              title: Text(
-                'Alamat',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(
-                'Jl. Bojong RT 06/RW 06, Desa Sukajaya, Kec. Rajadesa, Kab. Ciamis',
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            ListTile(
-              title: Text(
-                'No. Telepon',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(
-                '0822300270201',
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            ListTile(
-              title: Text(
-                'Email',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(
-                'dikrynurahman@gmail.com',
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            ListTile(
-              title: Text(
-                'Pendidikan Terakhir',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(
-                'S1 Sistem Informasi',
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context); // Kembali ke halaman sebelumnya
-              },
-              child: Text('Kembali'),
-            ),
-          ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+//pengaturan icon
+  Widget buildListTile(IconData icon, String title, String subtitle) {
+    return Card(
+      elevation: 2,
+      margin: EdgeInsets.symmetric(vertical: 8),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: ListTile(
+        leading: Icon(icon),
+        title: Text(
+          title,
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+        subtitle: Text(
+          subtitle,
+          style: TextStyle(fontSize: 18),
         ),
       ),
     );
